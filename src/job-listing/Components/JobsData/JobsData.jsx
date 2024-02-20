@@ -4,7 +4,7 @@ const jobsArr = data;
 
 const JobData = (props) => {
   const { jData_dispatch } = props;
-  useEffect(() => getData, []);
+  useEffect(() => getData(), []);
   
   const getData = async () => {
     const data = fetch("https://jsonplaceholder.typicode.com/posts", {
