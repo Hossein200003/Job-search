@@ -1,0 +1,21 @@
+body {
+  margin: 0px;
+}
+
+.main {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  background-color: #ebe960fd;
+}
+.head {
+  margin: 50px;
+  height: 200px;
+  background-color: #0e105c;
+}
+.cards {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 0px;
+}
