@@ -20,4 +20,4 @@ const useJobData = (dispatch) => {
   getData();
 };
 
-export { useJobData };
+export {useJobData};

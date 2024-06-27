@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import {
   Filters_context,
   Sort_context,
@@ -14,10 +14,12 @@ const Header = (props) => {
   const { isSorted, setSort } = useContext(Sort_context);
   const { filters: filterLable, filters_dispatch } =
     useContext(Filters_context);
-
+  useEffect(() => {
+    alert(`Click on filters (inside cards)
+      Click again to remove filters`);
+  }, []);
   return (
     <div className={`${styles.headBar}`}>
-      <h1>Click on job filters(inside cards)</h1>
       <div>
         {filterLable.map((item) => (
           <button

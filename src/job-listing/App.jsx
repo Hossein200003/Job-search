@@ -1,9 +1,6 @@
-import { useState, useReducer } from "react";
-import {
-  filters_reducer,
-  jData_reducer,
-} from "./reducers/allReducers.js";
-import { JobCard, Header, JobsData } from "./imports/Comps.js";
+import { useState, useReducer, useEffect } from "react";
+import { filters_reducer, jData_reducer } from "./reducers/allReducers.js";
+import { JobCard, Header, useJobData } from "./imports/Comps.js";
 import {
   Filters_context,
   Sort_context,
@@ -17,7 +14,10 @@ const App = () => {
   const [isSorted, setSort] = useState(false);
   const [isReversed, setReverse] = useState(false);
   const [num, setNumOfJobs] = useState(null);
-
+  useEffect(() => {
+    useJobData(jData_dispatch);
+  }, []);
+  
   return (
     <div className={`main`}>
       <Filters_context.Provider value={{ filters, filters_dispatch }}>
@@ -30,8 +30,6 @@ const App = () => {
           </Sort_context.Provider>
         </Reverse_context.Provider>
       </Filters_context.Provider>
-
-      <JobsData jData_dispatch={jData_dispatch} />
 
       {jobsData.length === 0 && (
         <h1 style={{ textAlign: "center " }}>Loading...</h1>
