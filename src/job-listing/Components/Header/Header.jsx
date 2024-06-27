@@ -17,6 +17,7 @@ const Header = (props) => {
 
   return (
     <div className={`${styles.headBar}`}>
+      <h1>Click on job filters(inside cards)</h1>
       <div>
         {filterLable.map((item) => (
           <button
